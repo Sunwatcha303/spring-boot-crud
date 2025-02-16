@@ -1,30 +1,66 @@
-# simple spring-boot-crud project
+# Spring Boot CRUD Application
 
-This is a basic Spring Boot application using Gradle as the build tool. The project demonstrates how to set up and run a Spring Boot application with Gradle.
+This is a simple CRUD (Create, Read, Update, Delete) application built using Spring Boot.
 
-## Prerequisites
+## Features
+- Create, Read, Update, and Delete operations on entities.
+- RESTful API endpoints.
+- Uses Spring Data JPA for database interactions.
+- Integrated with a relational database (e.g., MySQL, PostgreSQL, or H2 for testing).
+- Basic validation and error handling.
 
-Before you begin, ensure you have the following installed:
+## Technologies Used
+- Java
+- Spring Boot
+- Spring Data JPA
+- Spring Web
+- MySQL / PostgreSQL / H2
+- Gradle
 
-- Java 8 or later
-- Gradle 5.x or later
+## Setup Instructions
 
-## Setup
+### Prerequisites
+- Java 17+ installed
+- Gradle installed
+- MySQL/PostgreSQL installed (if using a persistent database)
 
-1. **Clone the repository** (or download the project):
-
-   ```bash
-   git clone git@github.com:Sunwatcha303/spring-boot-crud.git
+### Steps to Run
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Sunwatcha303/spring-boot-crud.git
    cd spring-boot-crud
+   ```
 
-2. **Build the project** To build the project and resolve the dependencies, run:
+2. Configure database settings in `application.properties`:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/your_database
+   spring.datasource.username=root
+   spring.datasource.password=your_password
+   spring.jpa.hibernate.ddl-auto=update
+   ```
 
-    ```bash
-    gradle build
+3. Build the project:
+   ```sh
+   ./gradlew build
+   ```
 
-3. **Run the Spring Boot application** To run the application, use the following command:
+4. Run the application:
+   ```sh
+   ./gradlew bootRun
+   ```
 
-    ```bash
-    gradle bootRun
+### API Endpoints
+| Method | Endpoint       | Description |
+|--------|--------------|-------------|
+| GET    | `/user` | Get all users |
+| GET    | `/user/{id}` | Get user by ID |
+| POST   | `/user` | Create a new user |
+| PUT    | `/user/{id}` | Update an existing user |
+| DELETE | `/user/{id}` | Delete an user |
 
-The application will start and listen on port 8081 by default. You can access it in your browser at http://localhost:8081
+## Testing
+You can test the API using tools like Postman or `curl`. For example:
+```sh
+curl -X GET http://localhost:8081/user
+```
+
