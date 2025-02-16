@@ -1,4 +1,5 @@
 # Spring Boot CRUD Application
+![Coverage](https://codecov.io/gh/Sunwatcha303/spring-boot-crud/branch/main/graph/badge.svg)
 
 This is a simple CRUD (Create, Read, Update, Delete) application built using Spring Boot.
 
